@@ -59,9 +59,10 @@ export default class Map extends React.Component {
 				    onDragEnd={this.onDragEnd} />
 				</Gmaps>
 	  		)
-	  	}
-	  	return (
+	  	} else {
+	  		return (
 	  		<h2>LOADING</h2>
 	  	)
+	  	}
 	  }
 }
