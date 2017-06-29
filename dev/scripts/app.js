@@ -5,19 +5,8 @@ import {
     NavLink as Link,
     Route
 } from "react-router-dom";
-
-
-import Intro from './components/Intro';
-import Services from './components/Services';
-
-import FeaturedSchools from './components/FeaturedSchools'
-
-
-
-
-
-
-
+import HomePage from './components/HomePage.js'
+import SchoolDetailsPage from './components/SchoolDetailsPage.js';
 
 
 class App extends React.Component {
@@ -25,17 +14,12 @@ class App extends React.Component {
 		return (
 			<Router>
 				<div>
-					<Intro />
-					<Services />
-					<Route exact path="/" component={FeaturedSchools}/>
+					<Route exact path="/" component={HomePage}/>
+					<Route path="/:school_url" component={SchoolDetailsPage}/>
 				</div>
 			</Router>
 		)
 	}
 }
 
-
 ReactDOM.render(<App/>, document.getElementById("app"));
-// <nav>
-// 	<Link to="/">Home</Link>
-// </nav>

@@ -27,6 +27,9 @@ section {
     justify-content: space-between;
     text-align: center;
 }
+#schoolName {
+    text-transform: capitalize;
+}
 figure {
     width: 30%;
     display: flex;
@@ -43,12 +46,10 @@ figure {
     justify-content: space-between;
 }
 .schoolCard {
-    width: 30%;
+    width: 25vw;
     height: 500px;
     text-transform: capitalize;
-    h2, h3, p {
-        text-align: left;
-    }
+    align-items: flex-start;
     figcaption {
         display: flex;
     }

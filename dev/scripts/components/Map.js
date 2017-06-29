@@ -2,13 +2,7 @@ import React from 'react';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 
 const params = {v: '3.exp', key: 'AIzaSyBTxoKUl1UNR0iIm0_PTAi96SK7pfg5dEY'};
-
 //const key = AIzaSyBTxoKUl1UNR0iIm0_PTAi96SK7pfg5dEY
-
-// const coords = {
-//   lat: 51.5258541,
-//   lng: -0.08040660000006028
-// };
 
 export default class Map extends React.Component {
 	constructor() {
@@ -17,29 +11,26 @@ export default class Map extends React.Component {
 			
 		}
 	}
-	onMapCreated(map) {
-	    map.setOptions({
-	      disableDefaultUI: true
-	    });
-	  }
+	// onMapCreated(map) {
+	//     map.setOptions({
+	//       disableDefaultUI: true
+	//     });
+	//   }
 
-	  onDragEnd(e) {
-	    console.log('onDragEnd', e);
-	  }
+	//   onDragEnd(e) {
+	//     console.log('onDragEnd', e);
+	//   }
 
-	  onCloseClick() {
-	    console.log('onCloseClick');
-	  }
+	//   onCloseClick() {
+	//     console.log('onCloseClick');
+	//   }
 
-	  onClick(e) {
-	    console.log('onClick', e);
-	  }
+	//   onClick(e) {
+	//     console.log('onClick', e);
+	//   }
 
 	  render() {
 	  	let location = this.props.location;
-	  	// console.log(location);
-
-	  	if (location !== undefined){
 	  		console.log(location)
 	  		return (
 				<Gmaps
@@ -56,13 +47,9 @@ export default class Map extends React.Component {
 				    lat={location.lat}
 				    lng={location.long}
 				    draggable={false}
-				    onDragEnd={this.onDragEnd} />
+				   />
 				</Gmaps>
 	  		)
-	  	} else {
-	  		return (
-	  		<h2>LOADING</h2>
-	  	)
-	  	}
+	  
 	  }
 }

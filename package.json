@@ -24,6 +24,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-gmaps": "^1.6.0",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-svg": "^2.1.21",
     "vinyl-buffer": "^1.0.0",
