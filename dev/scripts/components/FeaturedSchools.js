@@ -28,7 +28,8 @@ export default class FeaturedSchools extends React.Component {
 		this.setState({
 			currentView: nextView
 		})
-		console.log(this.state.schools.length)
+
+		// console.log(this.state.currentView[0], this.state.schools.length)
 	}
 	//EDIT CSS VIEWS FOR MEDIA QUERIES LATER ON TO DISPALY ONLY 2 OR 1 
 
@@ -37,10 +38,10 @@ export default class FeaturedSchools extends React.Component {
 		let nextView = currentView.map((i)=>{
 			return i - 1;
 		})
+
 		this.setState({
 			currentView: nextView
 		})
-		console.log(this.state.schools[1])
 	}
 
 	componentDidMount() {
@@ -69,14 +70,38 @@ export default class FeaturedSchools extends React.Component {
 			});
 		}
 	render() {
+
+		const buttons = () => { // hide buttons when reached end of carousels
+			if (this.state.currentView[0] == 0) {
+				return (
+					<div className="buttons">
+						<button className="right nav-btn" onClick={this.toRight}><span>&rsaquo;</span></button>
+					</div>
+				)
+			} else if (this.state.currentView[2] == this.state.schools.length-1) {
+				return (
+					<div className="buttons">
+						<button className="left nav-btn" onClick={this.toLeft}><span>&lsaquo;</span></button>
+					</div>
+				)
+			} else {
+				return (
+					<div className="buttons">
+						<button className="left nav-btn" onClick={this.toLeft}><span>&lsaquo;</span></button>
+						<button className="right nav-btn" onClick={this.toRight}><span>&rsaquo;</span></button>
+					</div>
+				)
+			}
+		}
+
 		if (this.state.schools[0] !== undefined) {
 			return (
 				<section id="featuredSchools">
 				<h2>Featured Schools</h2>
-				<div className="cardGallery">
+				<div className="gallery">
 					{this.state.currentView.map((i) => {
 						return (
-							<div>
+							<div className="galleryCard">
 								<Link to={`/${this.state.schools[i].url}`}>
 									<figure key={`${i}`} className="schoolCard">
 										<Map location={this.state.schools[i]}/>
@@ -88,8 +113,7 @@ export default class FeaturedSchools extends React.Component {
 							)
 						})
 					}
-					<button className="left nav-btn" onClick={this.toLeft}>left</button>
-					<button className="right nav-btn" onClick={this.toRight}>right</button>
+					{buttons()}
 				</div>
 				</section>
 			)
@@ -106,9 +130,10 @@ class Caption extends React.Component {
 		let school = this.props.school;
 		return (
 			<div className="caption" >
-					<h2>{school.name}</h2>
-					<h3>{school.level}</h3>
+					<h3>{school.name}</h3>
+					<h4>{school.level}</h4>
 					<p>{school.type} | {school.language}</p>
+					<span>Toronto</span>
 			</div>
 		)
 

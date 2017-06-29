@@ -3,6 +3,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 // ----- GENERAL STYLES ----
+a{
+    text-decoration: none;
+    color: inherit;
+}
 img {
     max-width: 100%;
     width: 100%;
@@ -10,6 +14,7 @@ img {
     object-fit: cover;
 }
 body {
+    font-family: 'Open Sans', sans-serif;
 }
 #app {
     max-width: 1440px;
@@ -34,34 +39,89 @@ figure {
     width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+
 #featuredSchools {
     flex-direction: column;
 }
-.cardGallery {
+.gallery {
     display: flex;
-    overflow: hidden;
-    position: relative;
     justify-content: space-between;
+    position: relative;
+    &Card {
+        width: 30%;
+        box-shadow: 0 0 18px #9b9b9b;
+        z-index: 100;
+    }
 }
 .schoolCard {
-    width: 25vw;
+    width: 100%;
     height: 500px;
     text-transform: capitalize;
     align-items: flex-start;
-    figcaption {
-        display: flex;
+    text-align: left;
+}
+.caption {
+    padding: 20px;
+    width: 100%;
+    h3 {
+        margin: 10px 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    h4 {
+        margin: 0px;
+        color: #f26721;
+    }
+    span { 
+        width: 100%;
+        border-top: 1px solid #9b9b9b;
+        padding-top: 10px;
+        display: block;
+        color: #9b9b9b;
     }
 }
-.nav-btn {
+
+.buttons {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline;
+    text-align: center;
+}
+.nav-btn {
+    z-index: 100;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 5rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #f26721;
+    span {
+        line-height: 1;
+        height: 25px;
+        vertical-align: middle;
+        position: relative;
+        bottom: 47px;
+        color: #f26721;
+    }
 }
 .left {
-    top: 0;
-    left: 0
+    transform: translateX(-150%);
+    left: 0;
+
 }
 .right {
-    top: 0;
+    transform: translateX(150%);
     right: 0;
+}
+hr {
+    color: #9b9b9b;
+    border-width: 0.5px;
 }

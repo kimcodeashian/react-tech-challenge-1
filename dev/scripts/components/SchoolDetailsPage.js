@@ -4,9 +4,6 @@ export default class SchoolDetailsPage extends React.Component {
 	constructor() {
 		super();
 	}
-	componentDidMount(){
-    	console.log(`mounted ${this.props.match.params.school_url}`)
-	}
     render() {
     	let name = this.props.match.params.school_url.split("-").join(" ");
         return (
