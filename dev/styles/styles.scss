@@ -1,7 +1,6 @@
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
-input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
-.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+@import './partials/setup';
+@import './partials/services';
+@import './partials/featuredSchools';
 // ----- GENERAL STYLES ----
 a{
     text-decoration: none;
@@ -18,8 +17,28 @@ body {
 }
 #app {
     max-width: 1440px;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
+}
+h1, h2, h3, h4 {
+    color: #4a4a4a;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+h4 {
+    font-size: 1.2rem;
+    margin: 0px;
+    color: #f26721;
+}
+h3, h4 {
+    letter-spacing: 0.5px;
+    margin: 0;
 }
 header {
     text-align: center;
@@ -32,96 +51,20 @@ section {
     justify-content: space-between;
     text-align: center;
 }
+
+figure {
+    width: 31.5%;
+    display: flex;
+    flex-direction: column;
+}
 #schoolName {
     text-transform: capitalize;
 }
-figure {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
 
-#featuredSchools {
-    flex-direction: column;
-}
-.gallery {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    &Card {
-        width: 30%;
-        box-shadow: 0 0 18px #9b9b9b;
-        z-index: 100;
-    }
-}
-.schoolCard {
-    width: 100%;
-    height: 500px;
-    text-transform: capitalize;
-    align-items: flex-start;
-    text-align: left;
-}
-.caption {
-    padding: 20px;
-    width: 100%;
-    h3 {
-        margin: 10px 0;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-    h4 {
-        margin: 0px;
-        color: #f26721;
-    }
-    span { 
+/* Landscape phone to portrait tablet */
+@media (max-width: 945px) {
+    header {
         width: 100%;
-        border-top: 1px solid #9b9b9b;
-        padding-top: 10px;
-        display: block;
-        color: #9b9b9b;
     }
 }
 
-.buttons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: inline;
-    text-align: center;
-}
-.nav-btn {
-    z-index: 100;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    background: none;
-    outline: none;
-    box-shadow: none;
-    font-size: 5rem;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    border: 2px solid #f26721;
-    span {
-        line-height: 1;
-        height: 25px;
-        vertical-align: middle;
-        position: relative;
-        bottom: 47px;
-        color: #f26721;
-    }
-}
-.left {
-    transform: translateX(-150%);
-    left: 0;
-
-}
-.right {
-    transform: translateX(150%);
-    right: 0;
-}
-hr {
-    color: #9b9b9b;
-    border-width: 0.5px;
-}

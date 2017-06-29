@@ -1,0 +1,21 @@
+.services {
+    h3 {
+        width: 80%;
+        margin: auto;
+        color: #00cce7;
+        padding: 20px 0 10px;
+        border-bottom: 1px solid rgba(202, 202, 202, 0.5);
+    }
+    p {
+        padding: 15px
+    }
+}
+@media (max-width: 780px) {
+    .services {
+        flex-direction: column;
+        figure {
+            width: 80%;
+            margin: 50px auto;
+        }
+    }
+}
