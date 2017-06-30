@@ -65,7 +65,7 @@ export default class FeaturedSchools extends React.Component {
 				});
 				// console.log(schools);
 				this.setState({
-					schools: schools
+					schools
 				})
 			});
 		}
